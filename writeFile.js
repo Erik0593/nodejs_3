@@ -28,7 +28,7 @@
  }
  
  fs.writeFile('hola.txt', 'hola a todos desde el nuevo archivo', 'utf8', atTheEnd)
- fs.appendFile('hola.txt','Probando el appendFile', Append )
+ fs.appendFile('hola.txt',' Probando el appendFile', Append )
 
 
 
