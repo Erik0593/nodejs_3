@@ -17,4 +17,19 @@
      console.log(`El archivo fue escrito exitosmente`)
  }
  
- fs.writeFile('folder/hola.txt', 'hola a todos desde el nuevo archivo', 'utf8', atTheEnd)
+ fs.writeFile('hola.txt', 'hola a todos desde el nuevo archivo', 'utf8', atTheEnd)
+
+
+
+// Falsy 
+// Son todos aquellos valores que cuando preguntamos logicamente evaluan a falso
+// Representan el vacio o la nada, la falta de datos
+// 0 , '' , null, undefined, False.
+
+// Thruthy
+// Representan un valor
+//  1..n y hasta negativos -1..-n
+// excepto el 0
+// 'iusfsudf' algun string
+// [] algun array o algun objeto {}
+// todos los demas son thruthys
