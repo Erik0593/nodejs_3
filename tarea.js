@@ -17,6 +17,7 @@ const fs = require('fs')
         return
     }
     console.log( `El archivo fue escrito exitosmente` )
+    Append()
  }
 
 
@@ -26,6 +27,7 @@ const fs = require('fs')
         return
     }
     console.log('Se agrego exitosamente')
+    Delete()
  }
 
 
