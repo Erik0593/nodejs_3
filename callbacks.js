@@ -27,33 +27,31 @@
      }, 2000)
  }
 
- function aplanar(unMuroConstruido) {
-     unMuroConstruido.aplanado = true
-     return unMuroConstruido
+
+
+ function aplanar(unMuroConstruido, unaFuncion) {
+     setTimeout(() => {
+        unMuroConstruido.aplanado = true
+    unaFuncion(null,unMuroConstruido) 
+    }, 2000)
  }
 
- function pintar (unMuroAplanado) {
-     unMuroAplanado.pintado = true
-     return unMuroAplanado
+
+
+ function pintar (unMuroAplanado,unaFuncion) {
+     setTimeout(() => {
+        unMuroAplanado.pintado = true
+    unaFuncion(null,unMuroAplanado)
+     },2000)
  }
+
+
+//a esto se llama Callback Hell
 construir({ ... muro } , (error,muroConstruido) => {
-    console.log('muro constriudo', muroConstruido)
-    console.log('error: ', error)
-    
-    pintar(muroConstruido)
+    aplanar(muroConstruido, (error,muroAplanado) => {
+        pintar(muroAplanado, (error,muroPintado) => {
+            console.log('Muro listo: ', muroPintado)
+            console.log('Muro: ', muro)
+        })
+    })
 })
-
-//  const muroConstruido = construir(muro)
-//  const MuroAplanado = aplanar(muroConstruido)
-//  const muroPintado = pintar(MuroAplanado)
-
-//  console.log('muroConstruido: ',muroConstruido).
-
-
-/**
- * Tarea
- * 
- * 1. Nuestro Scrpit tiene que crear hola.txt
- * 2. En funciones separadas usar la funcion appendFile para agregar una segunda linea
- * 3. Despues de 5 segundos eliminar el archivo (fs.unlink)
- */
