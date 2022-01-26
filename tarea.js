@@ -29,16 +29,13 @@ const fs = require('fs')
  }
 
 
- function Delete(error){
+ function Delete(){
     setTimeout (() => {
-        if(error){
-            console.log('Error el borrar archivo')
-        }
-        console.log('Archivo eliminado')
-     }, 10000)
+        fs.unlink('hola.txt', Delete)
+     }, 5000)
  }
 
 
  fs.writeFile('hola.txt', 'Tarea de la clase 6: agregar una segunda linea con appendfile y despues de 5 segundos eliminar el archivo', 'utf8', NewFile )
- fs.appendFile('hola.txt', ' Somos la generacion 15g lol', Append)
- fs.unlink('hola.txt', Delete)
+ fs.appendFile('hola.txt', ', Somos la generacion 15g lol', Append)
+
