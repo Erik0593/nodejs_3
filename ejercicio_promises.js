@@ -37,15 +37,12 @@ const fs = require('fs/promises')
 
 const filePath = 'Promises.txt'
 
-
 async function main () {
-   const File =  await fs.writeFile(filePath, 'Hola! no me queda mucho tiempo', 'utf8')
+    await fs.writeFile(filePath, 'Hola! no me queda mucho tiempo', 'utf8')
 
+    await fs.appendFile(filePath, '\nTengo algo importante que decirte...')
 
-   const Line = await fs.appendFile(filePath, '\nTengo algo importante que decirte...')
-
-
-   const Delete = await  setTimeout(() => {
+    setTimeout(() => {
     fs.unlink(filePath)
    },5000)
 }
