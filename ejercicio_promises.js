@@ -39,34 +39,15 @@ const filePath = 'Promises.txt'
 
 
 async function main () {
-   const File =  await fs.writeFile(filePath, 'Hola! no me queda mucho tiempo', 'utf8', (error) => {
-    if(error) {
-      reject('No se pudo crear el archivo')
-      return
-    }
-    resolve(File)
-    })
+   const File =  await fs.writeFile(filePath, 'Hola! no me queda mucho tiempo', 'utf8')
 
 
-   const Line = await fs.appendFile(filePath, 'Tengo algo importante que decirte...', (error) => {
-    if (error) {
-      reject('No se pudo Agregar al archivo')
-      return
-    }
-    resolve(Line)
-    })
+   const Line = await fs.appendFile(filePath, '\nTengo algo importante que decirte...')
 
-    
+
    const Delete = await  setTimeout(() => {
-    fs.unlink(filePath, (error) => {
-      if (error) {
-        reject('No se pudo borrar');
-        return
-      }
-      console.log('Adios popo')
-    })
-    }, 5000)
-    resolve(Delete)
+    fs.unlink(filePath)
+   },5000)
 }
 
 
